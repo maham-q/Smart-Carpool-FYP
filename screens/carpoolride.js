@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
     },
     findDriverButton: {
         marginTop: 20,
+        marginLeft:20
     },
 });
 

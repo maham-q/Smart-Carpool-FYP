@@ -9,14 +9,13 @@ const Button = ({ text, onPress }) => (
 
 const styles = StyleSheet.create({
   button: {
-    width: '91%',
+    width: '93%',
     height: 50,
     backgroundColor: '#4A56E2',
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
-    marginLeft:19
   },
   buttonText: {
     color: '#FFF',

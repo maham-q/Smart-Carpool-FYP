@@ -2,8 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import CarpoolRideScreen from './screens/carpoolride';
+import ChangePasswordScreen from './screens/changepassword';
 import ChooseDriverScreen from './screens/choosedriver';
 import ContactUsScreen from './screens/contact';
+import ForgotPasswordScreen from './screens/forgetpassword';
 import HistoryScreen from './screens/history';
 import LoginScreen from './screens/login';
 import MenuScreen from './screens/menu';
@@ -14,6 +16,7 @@ import RequestRideScreen from './screens/ride';
 import SettingsScreen from './screens/settings';
 import SignUpScreen from './screens/signup';
 import SingleRideScreen from './screens/singleride';
+
 
 const Stack = createStackNavigator();
 
@@ -39,8 +42,10 @@ const App = () => {
         <Stack.Screen name="Logout" component={LoginScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
         <Stack.Screen name="Review" component={ReviewScreen} />
-        <Stack.Screen name="Ratings and Reviews" component={RatingsAndReviewsScreen} />
-        {/* <Stack.Screen name="Verify" component={VerifyScreen} /> */}
+        <Stack.Screen name="Ratings and Reviews" component={RatingsAndReviewsScreen} /> 
+        <Stack.Screen name="ForgetPassword" component={ForgotPasswordScreen}  /> 
+        <Stack.Screen name='ChangePassword' component={ChangePasswordScreen}  />
+         {/* <Stack.Screen name="Verify" component={VerifyScreen} /> */}
 
       </Stack.Navigator>
     </NavigationContainer>

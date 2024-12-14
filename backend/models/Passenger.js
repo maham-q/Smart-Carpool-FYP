@@ -19,7 +19,10 @@ const passengerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-}, { timestamps: true });  
+  resetToken: { type: String },
+  resetCode: { type: Number },
+  tokenExpiry: { type: Date },
+}, { timestamps: true });
 
 const Passenger = mongoose.model('Passenger', passengerSchema, 'passengers');
 

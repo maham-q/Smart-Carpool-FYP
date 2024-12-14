@@ -29,6 +29,7 @@ const RideRequestCard = ({ time, distance, price, driverName, carName, carNumber
         style={[styles.button, styles.declineButton]}
         textStyle={styles.buttonText}
       />
+      <Text></Text>
       <Button
         text="Accept"
         onPress={onAccept}
@@ -150,7 +151,7 @@ headerText: {
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: 160,
+    width: 190,
     marginTop: 20,
   },
   declineButton: {

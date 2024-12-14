@@ -1,8 +1,7 @@
 import * as Location from 'expo-location';
 import React, { useEffect, useState } from 'react';
-import { Alert, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import Button from '../components/Button';
 
 const OngoingRideScreen = ({ navigation }) => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -46,7 +45,7 @@ const OngoingRideScreen = ({ navigation }) => {
           },
         ]
       );
-    }, 5000); 
+    }, 5000);
     return () => clearTimeout(timer);
   }, [navigation]);
 
@@ -114,13 +113,8 @@ const OngoingRideScreen = ({ navigation }) => {
       </ScrollView>
 
       <View style={styles.buttonsContainer}>
-        <Button text="Contact Driver" onPress={handleContactDriver}  />
-        <Button
-          text="Cancel Ride"
-          onPress={handleCancelRide}
-          backgroundColor="#FF6B6B"
-          color="#FFF"
-        />
+        <Button title="Contact Driver" onPress={handleContactDriver} style={styles.button} />
+        <Button title="Cancel Ride" onPress={handleCancelRide} style={styles.button}/>
       </View>
     </View>
   );
@@ -169,7 +163,7 @@ const styles = StyleSheet.create({
   },
   infoLabel: {
     fontSize: 13,
-    fontWeight:'bold',
+    fontWeight: 'bold',
     color: '#6B7280',
   },
   infoValue: {
@@ -180,12 +174,20 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-around', 
-    alignItems: 'center',
-    width:210,
+    flexDirection: 'row', 
+    justifyContent: 'space-around',  
+    alignItems: 'center',  
   },
-
+  button: {
+    width: '93%',
+    height: 50,
+    backgroundColor: '#4A56E2',
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
+  
 });
 
 export default OngoingRideScreen;

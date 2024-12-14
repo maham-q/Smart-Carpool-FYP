@@ -60,11 +60,7 @@ const SettingsScreen = () => {
             onChangeText={setPassword}
           />
           <View style={styles.container3}>
-            <Button
-            text="Save"
-            style={styles.button}
-            textStyle={styles.buttonText}
-          />
+            <Button text="Save"/>
           </View>
         </View>
       </>
@@ -140,7 +136,8 @@ const SettingsScreen = () => {
       textAlign: "center",
     },
     container3:{
-        marginTop:20
+        marginTop:20,
+        width:378
     }
   });
   

@@ -128,7 +128,9 @@ const RequestRideScreen = ({ navigation }) => {
           onChangeText={(text) => setFare(text)}
         />
       </View>
+      <View style={styles.button}>
       <Button text="Next" onPress={handleNextPress} />
+      </View>
     </View>
   );
 };
@@ -164,6 +166,10 @@ const styles = StyleSheet.create({
   },
   selectedRideOption: {
     backgroundColor: '#BFDBFE',
+  },
+  button:{
+    width:400,
+    marginLeft:20
   },
   rideLabel: {
     marginTop: 5,

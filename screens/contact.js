@@ -42,11 +42,9 @@ const ContactUsScreen = () => {
             placeholder="Enter your query"
             multiline={true}
             style={[styles.textArea, styles.input]} />
-          <Button
-            text="Send Message"
-            onPress={handleSendMessage}
-            style={styles.button}
-            textStyle={styles.buttonText} />
+          <View style={styles.button}>
+          <Button text="Send Message" onPress={handleSendMessage} />
+          </View>
         </View>
       </ScrollView></>
   );
@@ -90,15 +88,9 @@ const styles = StyleSheet.create({
     height: 200,
   },
   button: {
-    backgroundColor: '#3B3B98',
-    borderRadius: 8,
-    paddingVertical: 20,
+    width:378,
   },
-  buttonText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
+  
 });
 
 

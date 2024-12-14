@@ -56,7 +56,11 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
       />
 
-      <LinkButton text="Forget Password?" style={styles.forgetPassword} />
+      <LinkButton
+        text="Forget Password?"
+        style={styles.forgetPassword}
+        onPress={() => navigation.navigate('ForgetPassword')}
+      />
       <Button text="Log In" onPress={handleLogin} />
 
       <View style={styles.signupContainer}>

@@ -46,12 +46,7 @@ const SingleRideScreen = () => {
                 </View>
 
                 <View style={styles.findDriverButton}>
-                    <Button
-                        text="Find a driver"
-                        onPress={handleFindDriver}
-                        color="#fff"
-                        backgroundColor="#007bff"
-                    />
+                    <Button text="Find a driver" onPress={handleFindDriver}/>
                 </View>
             </View>
         </View>
@@ -110,6 +105,7 @@ const styles = StyleSheet.create({
     },
     findDriverButton: {
         marginTop: 30,
+        marginLeft:20
     },
 });
 

@@ -50,11 +50,9 @@ const ReviewScreen = () => {
                         </TouchableOpacity>
                     ))}
                 </View>
-                <Button
-                    text="Submit Review"
-                    onPress={handleSubmit}
-                    style={styles.button}
-                />
+                <View style={styles.button}>
+                <Button text="Submit Review" onPress={handleSubmit} />
+                </View>
             </View></>
     );
 }
@@ -130,17 +128,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 30,
     },
-    button: {
-        backgroundColor: '#1E40AF',
-        paddingVertical: 15,
-        borderRadius: 8,
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: '#FFFFFF',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
+    button:{
+        width:400,
+    }
+    
 });
 
 export default ReviewScreen;
