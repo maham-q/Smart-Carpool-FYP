@@ -5,12 +5,16 @@ import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native
 import ContactUsScreen from './contact';
 import HistoryScreen from './history';
 import LoginScreen from './login';
+import PackagesScreen from './packages';
 import RatingsAndReviewsScreen from './ratingsandreviews';
 import RequestRideScreen from './ride';
 import SettingsScreen from './settings';
+import WalletScreen from './wallet';
 
 const pages = [
   { name: 'Home', component: RequestRideScreen, icon: 'home' },
+  { name:'Wallet', component:WalletScreen, icon:'wallet'},
+  { name:'Packages', component: PackagesScreen, icon: 'work'},
   { name: 'History', component: HistoryScreen, icon: 'history' },
   { name: 'Ratings and Reviews', component: RatingsAndReviewsScreen, icon: 'rate-review' },
   { name: 'ContactUs', component: ContactUsScreen, icon: 'mail' },

@@ -10,12 +10,14 @@ import HistoryScreen from './screens/history';
 import LoginScreen from './screens/login';
 import MenuScreen from './screens/menu';
 import OngoingRideScreen from './screens/ongoingride';
+import PackagesScreen from './screens/packages';
 import RatingsAndReviewsScreen from './screens/ratingsandreviews';
 import ReviewScreen from './screens/review';
 import RequestRideScreen from './screens/ride';
 import SettingsScreen from './screens/settings';
 import SignUpScreen from './screens/signup';
 import SingleRideScreen from './screens/singleride';
+import WalletScreen from './screens/wallet';
 
 
 const Stack = createStackNavigator();
@@ -44,8 +46,10 @@ const App = () => {
         <Stack.Screen name="Review" component={ReviewScreen} />
         <Stack.Screen name="Ratings and Reviews" component={RatingsAndReviewsScreen} /> 
         <Stack.Screen name="ForgetPassword" component={ForgotPasswordScreen}  /> 
-        <Stack.Screen name='ChangePassword' component={ChangePasswordScreen}  />
+        <Stack.Screen name="ChangePassword" component={ChangePasswordScreen}  />
          {/* <Stack.Screen name="Verify" component={VerifyScreen} /> */}
+         <Stack.Screen name="Packages" component={PackagesScreen} />
+         <Stack.Screen name='Wallet' component={WalletScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
