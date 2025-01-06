@@ -5,6 +5,7 @@ const passengerRoutes = require('./routes/passengerRoutes');
 
 dotenv.config();
 
+
 const app = express();
 app.use(express.json());
 
