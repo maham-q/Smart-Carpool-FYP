@@ -34,19 +34,19 @@ const OngoingRideScreen = ({ navigation }) => {
       });
     });
 
-    const timer = setTimeout(() => {
-      Alert.alert(
-        "Ride Completed",
-        "Thank you for riding with us!",
-        [
-          {
-            text: "Write a Review",
-            onPress: () => navigation.navigate('Review'),
-          },
-        ]
-      );
-    }, 5000);
-    return () => clearTimeout(timer);
+    // const timer = setTimeout(() => {
+    //   Alert.alert(
+    //     "Ride Completed",
+    //     "Thank you for riding with us!",
+    //     [
+    //       {
+    //         text: "Write a Review",
+    //         onPress: () => navigation.navigate('Review'),
+    //       },
+    //     ]
+    //   );
+    // }, 5000);
+    // return () => clearTimeout(timer);
   }, [navigation]);
 
   const handleCancelRide = () => {

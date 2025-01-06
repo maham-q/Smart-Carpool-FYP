@@ -5,6 +5,11 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
+// Simple test route
+router.get('/', (req, res) => {
+  res.status(200).json({ message: 'Passenger API is working!' });
+});
+
 router.post('/signup', async (req, res) => {
   const { name, email, phone, password } = req.body;
 
@@ -67,6 +72,7 @@ router.post('/forgotpassword', async (req, res) => {
     passenger.resetCode = resetCode;
     passenger.tokenExpiry = tokenExpiry;
     await passenger.save();  
+
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
@@ -76,7 +82,6 @@ router.post('/forgotpassword', async (req, res) => {
       secure: true,
       port: 465,
     });
-
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -118,8 +123,4 @@ router.post('/changepassword', async (req, res) => {
   }
 });
 
-
 module.exports = router;
-
-
-

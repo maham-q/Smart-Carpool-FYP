@@ -18,7 +18,7 @@ const ChangePasswordScreen = ({ navigation }) => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('http://192.168.0.106:5000/api/passenger/changepassword', {
+            const response = await fetch('http://192.168.0.113:5000/api/passenger/changepassword', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

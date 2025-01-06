@@ -37,7 +37,7 @@ const SignUpScreen = ({ navigation }) => {
     }
 
     try {
-      const response = await fetch('http://192.168.0.106:5000/api/passenger/signup', {
+      const response = await fetch('http://192.168.0.113:5000/api/passenger/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
