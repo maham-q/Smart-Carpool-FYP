@@ -95,7 +95,7 @@ const SettingsScreen = () => {
       fontSize: 20,
       fontWeight: "bold",
       color: "#EDE9F6",
-      marginLeft: 110,
+      marginLeft: 115,
     },
     profileSection: {
       flexDirection: "row",

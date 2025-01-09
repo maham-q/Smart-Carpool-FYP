@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop:20,
+    marginTop: 30,
     marginBottom: 20,
     borderWidth:1,
     height:40,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#EDE9F6',
-    marginLeft:125,
+    marginLeft: 125,
   },
   title: {
     fontSize: 20,

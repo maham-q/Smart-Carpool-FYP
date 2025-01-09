@@ -1,10 +1,12 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import * as Location from 'expo-location'; // Added import
 import React, { useEffect, useState } from 'react';
-import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View , Dimensions, Platform} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Button from '../../components/Button';
 import InputField from '../../components/InputField';
+
+const { width, height } = Dimensions.get('window');
 
 const RequestRideScreen = ({ navigation }) => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -129,7 +131,7 @@ const RequestRideScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.button}>
-      <Button text="Next" onPress={handleNextPress} />
+        <Button text="Next" onPress={handleNextPress} />
       </View>
     </View>
   );
@@ -140,40 +142,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F3F4F6',
   },
-  menuIcon: {
-    position: 'absolute',
-    top: 20,
-    left: 10,
-    zIndex: 1,
-  },
   mapContainer: {
     flex: 8,
-    marginBottom: 10,
+    marginBottom: height * 0.02, 
   },
   rideOptionsContainer: {
     flexDirection: 'row',
-    paddingHorizontal: 15,
-    marginVertical: 10,
+    paddingHorizontal: width * 0.04, 
+    marginVertical: height * 0.01, 
   },
   rideOption: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 10,
-    padding: 10,
+    marginHorizontal: width * 0.03, 
+    padding: width * 0.03, 
     backgroundColor: '#E5E7EB',
     borderRadius: 10,
   },
   selectedRideOption: {
     backgroundColor: '#BFDBFE',
   },
-  button:{
-    width:400,
-    marginLeft:20
-  },
   rideLabel: {
-    marginTop: 5,
-    fontSize: 14,
+    marginTop: height * 0.005, 
+    fontSize: width * 0.035, 
     color: '#374151',
   },
   selectedRideLabel: {
@@ -183,11 +175,11 @@ const styles = StyleSheet.create({
   modeToggleContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginHorizontal: 20,
-    marginVertical: 10,
+    marginHorizontal: width * 0.05, 
+    marginVertical: height * 0.01,
   },
   checkboxContainer: {
-    padding: 10,
+    padding: width * 0.03, 
     borderRadius: 8,
     backgroundColor: '#E5E7EB',
   },
@@ -195,7 +187,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#BFDBFE',
   },
   checkboxLabel: {
-    fontSize: 16,
+    fontSize: width * 0.04, 
     color: '#374151',
   },
   activeCheckboxLabel: {
@@ -203,9 +195,28 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   inputContainer: {
-    marginVertical: 10,
-    paddingHorizontal: 20,
+    marginVertical: height * 0.02, 
+    paddingHorizontal: width * 0.05, 
+  },
+  menuIcon: {
+    width: width * 0.12, 
+    height: width * 0.12, 
+    borderRadius: width * 0.06, 
+    backgroundColor: 'gray',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    position: 'absolute',
+    top: Platform.OS === 'ios' ? height * 0.03 : height * 0.02, 
+    left: width * 0.03,
+    zIndex: 1,
+  },
+  button: {
+    width: width * 0.9, 
+    marginHorizontal: width * 0.09, 
   },
 });
-
 export default RequestRideScreen;

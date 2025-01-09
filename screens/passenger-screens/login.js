@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View , Platform } from 'react-native';
 import Button from '../../components/Button';
 import InputField from '../../components/InputField';
 import LinkButton from '../../components/LinkButton';
@@ -15,14 +15,15 @@ const LoginScreen = ({ navigation }) => {
       return;
     }
     try {
-      const response = await fetch('http://192.168.0.113:5000/api/passenger/login', {
+      const serverURL = Platform.OS === 'android' ? 'http://10.0.2.2:50/api/passenger/login' : 'http://localhost:50/api/passenger/login';
+      const response = await fetch(serverURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
       });
-
+      console.log(response)
       const data = await response.json();
 
       if (response.ok) {

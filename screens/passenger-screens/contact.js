@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#EDE9F6',
-    marginLeft:90,
+    marginLeft: 100,
   },
   input: {
     marginBottom: 30,

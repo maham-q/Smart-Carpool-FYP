@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#EDE9F6',
-    marginLeft: 110,
+    marginLeft: 115,
   },
   packageInfoBox: {
     backgroundColor: '#E5E7EB',
