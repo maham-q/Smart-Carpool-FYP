@@ -1,5 +1,5 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import * as Location from 'expo-location'; // Added import
+import * as Location from 'expo-location';
 import React, { useEffect, useState } from 'react';
 import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
@@ -37,13 +37,18 @@ const RequestRideScreen = ({ navigation }) => {
       Alert.alert('Error', 'Please fill out all fields, select a ride option, and allow location access.');
       return;
     }
+    const fareValue = parseFloat(fare);
+    if (isNaN(fareValue) || fareValue <= 0) {
+      Alert.alert('Error', 'Please enter a valid positive number for the fare.');
+      return;
+    }
 
     const rideData = {
       mode: activeMode,
       rideType: selectedRideOption,
       pickup,
       dropoff,
-      fare,
+      fare: fareValue,
       location: currentLocation,
     };
 
@@ -129,7 +134,7 @@ const RequestRideScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.button}>
-      <Button text="Next" onPress={handleNextPress} />
+        <Button text="Next" onPress={handleNextPress} />
       </View>
     </View>
   );
@@ -167,9 +172,9 @@ const styles = StyleSheet.create({
   selectedRideOption: {
     backgroundColor: '#BFDBFE',
   },
-  button:{
-    width:400,
-    marginLeft:20
+  button: {
+    width: 400,
+    marginLeft: 20
   },
   rideLabel: {
     marginTop: 5,

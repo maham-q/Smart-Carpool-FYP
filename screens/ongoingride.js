@@ -7,7 +7,7 @@ const OngoingRideScreen = ({ navigation }) => {
   const [currentLocation, setCurrentLocation] = useState(null);
 
   const rideData = {
-    driverName: "Arshad Kamal",
+    driverName: "Abc Xyz",
     car: {
       name: "Toyota Corolla",
       color: "White",

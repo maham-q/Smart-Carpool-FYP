@@ -12,9 +12,11 @@ const CarpoolRideScreen = ({route}) => {
     const { rideData } = route.params;
 
     const incrementPassengers = () => {
-        setAdditionalPassengers(additionalPassengers + 1);
+        if (additionalPassengers < 3) {
+            setAdditionalPassengers(additionalPassengers + 1);
+        }
     };
-
+    
     const decrementPassengers = () => {
         if (additionalPassengers > 1) {
             setAdditionalPassengers(additionalPassengers - 1);
